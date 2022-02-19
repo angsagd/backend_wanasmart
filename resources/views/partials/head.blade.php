@@ -7,7 +7,7 @@
     <meta name="google-signin-client_id" content="438813564258-cdl5dne36849c6ng0cle0qe4kk0a2ad8.apps.googleusercontent.com">
     <link rel="icon" href="../images/favicon.ico">
 
-    <title>UltimatePro Admin - Dashboard</title>
+    <title>Wana Smart - Dashboard</title>
     
 	<!-- Bootstrap 4.0-->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap/dist/css/bootstrap.css')}}">
@@ -32,6 +32,7 @@
 	
 	<!-- UltimatePro Admin skins -->
 	<link rel="stylesheet" href="{{asset('css/skins/_all-skins.css')}}">
+
 	
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

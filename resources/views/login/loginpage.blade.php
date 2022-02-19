@@ -32,8 +32,11 @@
 				</div>
 
 				<form class="login100-form validate-form">
+					<center>
+						<img src="{{asset('foto/logo.png')}}" style="width: 100px;">
+					</center>
 					<span class="login100-form-title">
-						SILAHKAN LOGIN
+						WANA SMART
 					</span>
 
 					<center>

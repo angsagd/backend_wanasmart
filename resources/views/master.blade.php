@@ -23,9 +23,11 @@
 			</div>
 		</div>
 
+		<div class="content">
 		<!-- KONTEN DISINI -->
 		@yield('content')
 		<!-- BATAS KONTEN -->
+		</div>
 	  </div>
   </div>
 
@@ -85,6 +87,8 @@
 	<script src="{{asset('js/demo.js')}}"></script>
 
 	<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+	<script src="{{asset('assets/vendor_components/horizontal-timeline/js/horizontal-timeline.js')}}"></script>
 	
 	
 </body>

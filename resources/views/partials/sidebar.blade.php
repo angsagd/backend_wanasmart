@@ -12,10 +12,17 @@
 
 	
 			<!-- MENU DASHBOARD -->
-			<li class=" active">
+			<li id="dashboard" class="">
 	        <a href="{{url('/')}}">
 	          <i class="ti-dashboard"></i>
 	          <span>Dashboard</span>
+	        </a>
+	    </li>  
+
+	    <li id="permohonan_bibit" class="">
+	        <a href="{{url('mohon-bibit')}}">
+	          <i class="ti-hand-open"></i>
+	          <span>Permohonan Bibit</span>
 	        </a>
 	    </li>  
 	
@@ -32,3 +39,9 @@
 
 
 </aside>
+
+
+<script type="text/javascript">
+	var element = document.getElementById('{{Session::get("menu")}}');
+	element.classList.add("active");
+</script>

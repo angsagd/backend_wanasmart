@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\c_login;
 use App\Http\Controllers\c_dashboard;
+use App\Http\Controllers\c_mohonbibit;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +22,8 @@ Route::get('keluar', [c_login::class, 'dologout']);
 Route::group(['middleware' => ['autentikasi']], function(){
     Route::get('dashboard', [c_dashboard::class, 'index']);
     Route::get('/', [c_dashboard::class, 'index']);
+});
+
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::get('mohon-bibit', [c_mohonbibit::class, 'index']);
 });
