@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\tb_user;
 use Session;
 
 class c_login extends Controller
@@ -24,7 +25,23 @@ class c_login extends Controller
         Session::put('nama',$jwtPayload->name);
         Session::put('email',$jwtPayload->email);
         Session::put('photo',$jwtPayload->picture);
+
+        $pengguna = tb_user::where('id_google','=',$jwtPayload->sub)->first();
+        if (empty($pengguna)) {
+            $data = new tb_user;
+            $data->id_google = $jwtPayload->sub;
+            $data->nama = $jwtPayload->name;
+            $data->email = $jwtPayload->email;
+            $data->photo = $jwtPayload->picture;
+            $data->token = md5($jwtPayload->sub.$jwtPayload->email);
+            $data->save();
+        } else {
+            $pengguna->nama = $jwtPayload->name;
+            $pengguna->photo = $jwtPayload->picture;
+            $pengguna->save();
+        }
         return redirect('dashboard');
+        
     }
 
     public function dologout(){

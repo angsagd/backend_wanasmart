@@ -41,9 +41,10 @@
           <!-- Menu Body -->
           <li class="user-body">
 		    <a class="dropdown-item" href="javascript:void(0)"><i class="ion ion-person"></i>Profil</a>
+		    <a class="btn dropdown-item" href="" data-toggle="modal" data-target="#modal-default"><i class="ion ion-settings"></i>Role</a>
 				<a class="dropdown-item" href="{{url('keluar')}}"><i class="ion-log-out"></i> Logout</a>
-			<div class="dropdown-divider"></div>
-			<div class="p-10"><a href="javascript:void(0)" class="btn btn-sm btn-rounded btn-success">View Profile</a></div>
+				<div class="dropdown-divider"></div>
+				<div class="p-10"><a href="javascript:void(0)" class="btn btn-sm btn-rounded btn-success">View Profile</a></div>
           </li>
         </ul>
       </li>	
@@ -58,3 +59,51 @@
       </div>
     </nav>
   </header>
+
+  <!-- MODAL -->
+  <form action="{{url('rubah_role')}}" method="post">
+  <div class="modal fade show" id="modal-default" style="display: none;">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+
+		  <div class="modal-header">
+			<h4 class="modal-title">Rubah Role</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">×</span></button>
+		  </div>
+		  
+		  <div class="modal-body">
+					{{csrf_field()}}
+					<div class="form-group">
+						<label>ID User :</label>
+						<input type="text" class="form-control" value="{{Session::get('id')}}" disabled>
+					</div>
+
+					<div class="form-group">
+						<label>Nama User :</label>
+						<input type="text" class="form-control" value="{{Session::get('nama')}}" disabled>
+					</div>
+					<div class="form-group">
+						<label>Role saat ini :</label>
+						<input type="text" class="form-control" value="{{Session::get('role')}}" disabled>
+					</div>
+					<hr>
+					<label>Atur ke :</label>
+					<select name="role" class="select form-control" tabindex="-98">
+								<option>Administrator</option>
+								<option>Operator</option>
+								<option>Pemohon</option>
+					</select>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="submit" class="btn btn-primary float-right">Simpan</button>
+		  </div>
+		  
+		</div>
+		<!-- /.modal-content -->
+	  </div>
+	  <!-- /.modal-dialog -->
+  </div>
+  </form>
+  <!-- END MODAL -->

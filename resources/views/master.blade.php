@@ -24,6 +24,18 @@
 		</div>
 
 		<div class="content">
+
+			<!-- ALERT SUKSES -->
+			@if(Session::get('status') == 'sukses')
+			<div class="alert alert-success alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+				<h4><i class="icon fa fa-check"></i>Berhasil</h4>
+				{{Session::get('pesan')}}
+			</div>
+			@endif
+
+
 		<!-- KONTEN DISINI -->
 		@yield('content')
 		<!-- BATAS KONTEN -->
@@ -89,6 +101,12 @@
 	<script src="https://accounts.google.com/gsi/client" async defer></script>
 
 	<script src="{{asset('assets/vendor_components/horizontal-timeline/js/horizontal-timeline.js')}}"></script>
+
+	<!-- This is data table -->
+  <script src="{{asset('assets/vendor_components/datatable/datatables.min.js')}}"></script>
+	
+	<!-- UltimatePro Admin for Data Table -->
+	<script src="{{asset('js/pages/data-table.js')}}"></script>
 	
 	
 </body>

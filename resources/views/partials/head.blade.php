@@ -33,6 +33,11 @@
 	<!-- UltimatePro Admin skins -->
 	<link rel="stylesheet" href="{{asset('css/skins/_all-skins.css')}}">
 
+	<link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-select/dist/css/bootstrap-select.css')}}">
+
+	<!-- Data Table-->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/vendor_components/datatable/datatables.min.css')}}"/>
+
 	
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\c_login;
+use App\Http\Controllers\c_user;
+use App\Http\Controllers\c_role;
 use App\Http\Controllers\c_dashboard;
 use App\Http\Controllers\c_mohonbibit;
 /*
@@ -26,4 +28,17 @@ Route::group(['middleware' => ['autentikasi']], function(){
 
 Route::group(['middleware' => ['autentikasi']], function(){
     Route::get('mohon-bibit', [c_mohonbibit::class, 'index']);
+});
+
+// ROUTE USER
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::get('profil', [c_user::class, 'profil']);
+    Route::get('show_profil/{id}', [c_user::class, 'show_profil']);
+    Route::post('rubah_role', [c_user::class, 'rubah_role']);
+    Route::get('pengguna', [c_user::class, 'list_pengguna']);
+});
+
+// ROUTE ROLE
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::get('role', [c_role::class, 'landing']);
 });

@@ -39,9 +39,7 @@
 						WANA SMART
 					</span>
 
-					<center>
-					<p>Aplikasi ini telah terintegrasi dengan <br> <b>One Tap Google Sign-In </b><br> Silahkan gunakan akun Google anda untuk login ke aplikasi.</p>
-					</center>
+					
 
 				<div id="g_id_onload"
 		             data-client_id="438813564258-cdl5dne36849c6ng0cle0qe4kk0a2ad8.apps.googleusercontent.com"
@@ -49,14 +47,19 @@
 		             data-_token="{{ csrf_token() }}">
 		        </div>
 		        <center>
-		        <div class="g_id_signin mb-4 mt-4"
-		             data-type="standart"
+		        <div class="g_id_signin"
+		             data-type="standard"
 		             data-size="large"
 		             data-theme="outline"
 		             data-text="sign_in_with"
 		             data-shape="pill"
 		             data-logo_alignment="left">
 		        </div>
+		        <center>
+		        	<small>
+					<p class="mb-4">Silahkan gunakan akun Google anda untuk login ke aplikasi.</p>
+					</small>
+				</center>
 					
 				</form>
 			</div>
