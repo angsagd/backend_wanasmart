@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\tb_user;
+use App\Models\tb_role;
+use App\Models\tb_role_menu;
+use App\Models\tb_role_pengguna;
 use Session;
 
 class c_login extends Controller
@@ -40,6 +43,11 @@ class c_login extends Controller
             $pengguna->photo = $jwtPayload->picture;
             $pengguna->save();
         }
+
+        $hakakses = array('Pengguna');
+        Session::put('hakakses',$hakakses);
+        Session::put('role','Pengguna');
+
         return redirect('dashboard');
         
     }

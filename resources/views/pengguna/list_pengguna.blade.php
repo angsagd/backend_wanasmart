@@ -8,7 +8,7 @@
 			<div class="box-title"></div>
 			<div class="box-body">
 				<div class="table-responsive">
-					<table id="example5" class="table table-striped" style="width: 100%;">
+					<table id="example1" class="table table-striped" style="width: 100%;">
 						<thead class="text-center">
 							<th style="width: 1%">No</th>
 							<th>Aksi</th>
@@ -35,9 +35,12 @@
 									  </button>
 									  <div class="dropdown-menu">
 										<a class="dropdown-item" href="{{url('show_profil')}}/{{$p->token}}">Lihat Profil</a>
-										<a class="dropdown-item" href="#">Tambah Role</a>
+										<a class="dropdown-item" href="{{url('role_user')}}/{{$p->token}}">Kelola Role</a>
+										@if(Session::get('id') != $p->id_google)
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item bg-danger" href="#">Hapus</a>
+										<a class="dropdown-item bg-danger" href="{{url('hapus_pengguna')}}/{{$p->token}}" onclick="return confirm('Apakah anda yakin menghapus Pengguna {{$p->nama}}')">Hapus</a>
+										@endif
+
 									  </div>
 									</div>
 								</td>

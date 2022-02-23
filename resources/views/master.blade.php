@@ -35,6 +35,16 @@
 			</div>
 			@endif
 
+			<!-- ALERT SUKSES -->
+			@if(Session::get('status') == 'gagal')
+			<div class="alert alert-danger alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+				<h4><i class="icon fa fa-warning"></i>Terjadi Kesalahan</h4>
+				{{Session::get('pesan')}}
+			</div>
+			@endif
+
 
 		<!-- KONTEN DISINI -->
 		@yield('content')
@@ -107,6 +117,22 @@
 	
 	<!-- UltimatePro Admin for Data Table -->
 	<script src="{{asset('js/pages/data-table.js')}}"></script>
+
+	<!-- UltimatePro Admin for advanced form element -->
+	<script src="{{asset('js/pages/advanced-form-element.js')}}"></script>
+
+	<!-- Select2 -->
+	<script src="{{asset('assets/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+
+	<!-- <script type="text/javascript">
+		$.ajax({
+			type:"get",
+			url:"{{url('req_role')}}",
+			success:function(data){
+				alert(data.role[0].nama_role);
+			}
+		})
+	</script> -->
 	
 	
 </body>

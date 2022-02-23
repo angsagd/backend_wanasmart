@@ -61,8 +61,9 @@
   </header>
 
   <!-- MODAL -->
+
   <form action="{{url('rubah_role')}}" method="post">
-  <div class="modal fade show" id="modal-default" style="display: none;">
+  <div class="modal fade show" id="modal-default">
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 
@@ -89,10 +90,8 @@
 					</div>
 					<hr>
 					<label>Atur ke :</label>
-					<select name="role" class="select form-control" tabindex="-98">
-								<option>Administrator</option>
-								<option>Operator</option>
-								<option>Pemohon</option>
+					<select id="role_user" name="role" class="select form-control">
+								
 					</select>
 		  </div>
 		  <div class="modal-footer">
@@ -106,4 +105,24 @@
 	  <!-- /.modal-dialog -->
   </div>
   </form>
+
+  <script type="text/javascript">
+  	var xmlhttp = new XMLHttpRequest();
+  	var kec = document.getElementById('role_user');
+  	var url = "{{url('req_role')}}";
+		xmlhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        var myArr = JSON.parse(this.responseText);
+		        for (var i = 0; i < myArr.role.length; i++) {
+				      var opt = document.createElement('option');
+							opt.value = myArr.role[i].id_role;
+							opt.innerHTML = myArr.role[i].nama_role;
+							kec.appendChild(opt);
+		        }
+		    }
+		};
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+  </script>
+
   <!-- END MODAL -->
