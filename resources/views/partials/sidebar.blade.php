@@ -10,13 +10,22 @@
 
     	<li class="header nav-small-cap">MAIN MENU</li>
 
+    	<!-- LANDING PAGE -->
+    	<li id="dashboard" class="">
+	        <a href="{{url('/')}}">
+	          <i class="ti-dashboard"></i>
+	          <span>Landing Page</span>
+	        </a>
+	    </li>  		
+
     	<!-- MENU DASHBOARD -->
 			<li id="dashboard" class="">
-	        <a href="{{url('/')}}">
+	        <a href="{{url('dashboard')}}">
 	          <i class="ti-dashboard"></i>
 	          <span>Dashboard</span>
 	        </a>
-	    </li>  		
+	    </li>  
+
 
     	@if(in_array('Dasar',Session::get('hakakses')))
 		  <li class="header nav-small-cap">PERSONAL</li>

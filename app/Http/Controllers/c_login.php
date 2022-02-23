@@ -48,12 +48,12 @@ class c_login extends Controller
         Session::put('hakakses',$hakakses);
         Session::put('role','Pengguna');
 
-        return redirect('dashboard');
+        return redirect('/');
         
     }
 
     public function dologout(){
         Session::flush();
-        return redirect('dashboard');
+        return redirect('/');
     }
 }

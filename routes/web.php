@@ -18,13 +18,14 @@ use App\Http\Controllers\c_mohonbibit;
 |
 */
 
+Route::get('/', [c_dashboard::class, 'landing']);
+
 Route::get('masuk', [c_login::class, 'loginpage']);
 Route::post('dologin', [c_login::class, 'dologin']);
 Route::get('keluar', [c_login::class, 'dologout']);
 
 Route::group(['middleware' => ['autentikasi','hakakses']], function(){
     Route::get('dashboard', [c_dashboard::class, 'index']);
-    Route::get('/', [c_dashboard::class, 'index']);
 });
 
 Route::group(['middleware' => ['autentikasi','hakakses']], function(){

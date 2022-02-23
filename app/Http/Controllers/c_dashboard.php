@@ -11,4 +11,8 @@ class c_dashboard extends Controller
         Session::flash('menu','dashboard');
         return view('dashboard/dashboard');
     }
+
+    public function landing(){
+        return view('landing/utama');
+    }
 }
