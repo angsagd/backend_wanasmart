@@ -40,7 +40,6 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item bg-danger" href="{{url('hapus_pengguna')}}/{{$p->token}}" onclick="return confirm('Apakah anda yakin menghapus Pengguna {{$p->nama}}')">Hapus</a>
 										@endif
-
 									  </div>
 									</div>
 								</td>
