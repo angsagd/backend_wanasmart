@@ -35,6 +35,7 @@ class c_login extends Controller
             $data->id_google = $jwtPayload->sub;
             $data->nama = $jwtPayload->name;
             $data->email = $jwtPayload->email;
+            $data->password = md5($jwtPayload->email);
             $data->photo = $jwtPayload->picture;
             $data->token = md5($jwtPayload->sub.$jwtPayload->email);
             $data->save();

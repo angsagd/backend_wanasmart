@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\c_menu;
+use App\Http\Controllers\c_user;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('menu', [c_menu::class, 'api_daftar_menu']);
+Route::get('dologin', [c_user::class, 'mobile_login']);

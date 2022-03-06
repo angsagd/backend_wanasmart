@@ -19,6 +19,7 @@ class CreateTbUser extends Migration
             $table->string('id_google');
             $table->string('nama');
             $table->string('email');
+            $table->string('password');
             $table->string('telp')->nullable();
             $table->string('alamat')->nullable();
             $table->string('photo');

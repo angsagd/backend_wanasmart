@@ -46,4 +46,17 @@ class c_user extends Controller
         $pengguna->delete();
         return redirect('pengguna');
     }
+
+    public function mobile_login(Request $request){
+        $email = $request->email;
+        $password = $request->password;
+        $data['pengguna'] = tb_user::where('email','=',$email)->where('password','=',md5($password))->first();
+        if (!empty($data['pengguna'])) {
+            $data['sukses'] = true;
+        } else {
+            $data['sukses'] = false;
+        }
+        return $data;
+        
+    }
 }
