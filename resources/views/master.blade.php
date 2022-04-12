@@ -88,6 +88,7 @@
 	 
 	
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBocuQEfY1hThSb_AAefHNLPLCar31bjUE"></script>
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
 
 	<!-- jQuery 3 -->
 	<script src="{{asset('assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js')}}"></script>
