@@ -43,7 +43,7 @@
 	<!-- Select2 -->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/select2/dist/css/select2.min.css')}}">
 	
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
 
 	 <!-- Popup CSS -->
     <link href="{{asset('assets/vendor_components/Magnific-Popup-master/dist/magnific-popup.css')}}" rel="stylesheet">
