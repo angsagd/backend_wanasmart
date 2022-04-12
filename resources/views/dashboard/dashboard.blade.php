@@ -58,11 +58,11 @@
 				<div class="mt-4">
 					<b class="mb-2">KETERANGAN :</b>
 					<div>
-						<img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png">
+						<img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png">
 						Perhutanan Sosial
 					</div>
 					<div>
-						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png">
+						<img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png">
 						Rehabilitasi Hutan dan Lahan
 					</div>
 				</div>
