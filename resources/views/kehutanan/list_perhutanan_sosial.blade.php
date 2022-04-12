@@ -67,18 +67,15 @@
 								@endif
 							</td>
 							<td class="text-center">
-								<div class="btn-group">
-								  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Kelola</button>
-								  <div class="dropdown-menu">
-									<a class="dropdown-item" href="{{url('edit_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">Sesuaikan Data</a>
-									<a class="dropdown-item" href="{{url('foto_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
-										Lihat Galeri
-									</a>
-									<a class="dropdown-item" href="{{url('potensi_hhbk')}}/{{$ps->id_perhutanan_sosial}}">
-										Potensi HHBK
-									</a>
-								  </div>
-								</div>
+								<a href="{{url('edit_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
+									<button title="Edit Data" class="btn btn-xs btn-circle btn-warning"><i class="fa fa-edit"></i></button>
+								</a>
+								<a href="{{url('foto_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
+									<button title="Galeri" class="btn btn-xs btn-circle btn-info"><i class="fa fa-image"></i></button>
+								</a>
+								<a href="{{url('potensi_hhbk')}}/{{$ps->id_perhutanan_sosial}}">
+									<button title="Potensi HHBK" class="btn btn-xs btn-circle btn-info"><i class="fa fa-money"></i></button>
+								</a>
 							</td>
 						</tr>
 						@endforeach
