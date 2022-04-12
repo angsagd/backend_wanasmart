@@ -129,18 +129,6 @@
 	<!-- Magnific popup JavaScript -->
   <script src="{{asset('assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js')}}"></script>
   <script src="{{asset('assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js')}}"></script>
-	
-
-	<!-- <script type="text/javascript">
-		$.ajax({
-			type:"get",
-			url:"{{url('req_role')}}",
-			success:function(data){
-				alert(data.role[0].nama_role);
-			}
-		})
-	</script> -->
-	
-	
+		
 </body>
 </html>
