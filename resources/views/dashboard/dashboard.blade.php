@@ -72,6 +72,7 @@
 </div>
 
 <script type="text/javascript">
+	myMap();
 	function myMap() {
 		var mapProp= {
 		  center:new google.maps.LatLng(-8.4406273,115.1044736),
@@ -86,7 +87,7 @@
 			var marker = new google.maps.Marker({
 			    position: lokasi,
 			    map:peta,
-			    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+			    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
 			    title:"{{$l->nama_kelompok}}"
 			});
 		<?php } ?>
@@ -98,12 +99,12 @@
 			var marker = new google.maps.Marker({
 			    position: lokasi,
 			    map:peta,
-			    icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+			    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
 			    title:"{{$l->nama_kelompok}}"
 			});
 		<?php } ?>
 	}
-	google.maps.event.addDomListener(window, 'load', myMap);
+	// google.maps.event.addDomListener(window, 'load', myMap);
 </script>
 
 @endsection
