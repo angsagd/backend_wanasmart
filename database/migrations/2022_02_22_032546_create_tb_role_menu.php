@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\tb_role_menu;
 
 class CreateTbRoleMenu extends Migration
 {
@@ -25,6 +26,27 @@ class CreateTbRoleMenu extends Migration
                     ->references('id_menu')->on('tb_menu')
                     ->onDelete('cascade');
         });
+
+        $item = new tb_role_menu;
+        $item->role_id = 1;
+        $item->menu_id = 1;
+        $item->save();
+
+        $item = new tb_role_menu;
+        $item->role_id = 1;
+        $item->menu_id = 2;
+        $item->save();
+
+        $item = new tb_role_menu;
+        $item->role_id = 1;
+        $item->menu_id = 3;
+        $item->save();
+
+        $item = new tb_role_menu;
+        $item->role_id = 1;
+        $item->menu_id = 4;
+        $item->save();
+
     }
 
     /**

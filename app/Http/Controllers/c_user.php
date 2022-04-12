@@ -18,7 +18,7 @@ class c_user extends Controller
         Session::put('role',$namarole->nama_role);
         Session::flash('status','sukses');
         Session::flash('pesan','Saat ini anda bertindak sebagai '.strtoupper($namarole->nama_role));
-        return redirect('/');
+        return redirect('dashboard');
     }
 
     public function list_pengguna(){

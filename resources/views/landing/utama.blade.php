@@ -49,35 +49,7 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-          <li class="dropdown"><a href="#"><span>Kehutanan</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Pemanfaatan Hutan</a></li>
-              <li><a href="#">Penggunaan Hutan</a></li>
-              <li><a href="#">Rehabilitasi Hutan dan Lahan (RHL)</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Lingkungan Hidup</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Pengelolaan Sampah</a></li>
-              <li><a href="#">AMDAL</a></li>
-              <li><a href="#">Indek Kualitas Lingkungan Hidup (IKLH)</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link" href="#">Peraturan</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
-          <li><a class="nav-link scrollto" href="#features">Fitur</a></li>
-          <li><a class="nav-link scrollto" href="#gallery">Galeri</a></li>
-          @if(!Session::get('login'))
-          <li><a class="nav-link" href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
-          @else
-          <li><a class="nav-link" href="{{url('dashboard')}}">Dashboard</a></li>
-          @endif
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      @include('landing.navbar')
 
     </div>
   </header><!-- End Header -->
@@ -476,22 +448,7 @@
     
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Bootslander</span></strong> - Dinas Kehutanan dan Lingkungan Hidup Provinsi Bali. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+  @include('landing.footer')
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
@@ -511,44 +468,11 @@
   <!-- Template Main JS File -->
   <script src="{{asset('landing/assets/js/main.js')}}"></script>
 
-  <!-- MODAL LOGIN -->
-  <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form action="{{url('dologin')}}" method="post">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">LOGIN FORM</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <div id="g_id_onload"
-               data-client_id="438813564258-cdl5dne36849c6ng0cle0qe4kk0a2ad8.apps.googleusercontent.com"
-               data-login_uri="{{url('dologin')}}"
-               data-_token="{{ csrf_token() }}">
-          </div>
-          <center>
-            <small>
-                <p class="mb-4">Silahkan gunakan akun Google anda untuk login ke aplikasi.</p>
-            </small>
-            <div class="g_id_signin"
-                 data-type="standard"
-                 data-size="large"
-                 data-theme="outline"
-                 data-text="sign_in_with"
-                 data-shape="pill"
-                 data-logo_alignment="left">
-            </div>
-            
-          </center>
-        </div>
-      </div>
-    </div>
-    </form>
-  </div>
-  <!-- END MODAL LOGIN -->
+  <script type="text/javascript">
+    function proseslogin(){
+      document.getElementById("loginform").submit();
+    }
+  </script>
 
 </body>
 

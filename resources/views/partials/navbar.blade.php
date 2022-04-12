@@ -2,8 +2,8 @@
     <!-- Logo -->
     <a href="index.html" class="logo">
 	  <div class="logo-mini">
-		  <span class="light-logo"><img src="{{asset('foto/logowana.png')}}" alt="logo"></span>
-		  <span class="dark-logo"><img src="{{asset('foto/logowana.png')}}" alt="logo"></span>
+		  <!-- <span class="light-logo"><img src="{{asset('foto/logowana.png')}}" alt="logo"></span> -->
+		  <!-- <span class="dark-logo"><img src="{{asset('foto/logowana.png')}}" alt="logo"></span> -->
 	  </div>
     </a>
 

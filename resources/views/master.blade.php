@@ -2,7 +2,7 @@
 <html lang="en">
   @include('partials/head')
 
-<body class="hold-transition skin-info dark-sidebar sidebar-mini">
+<body class="hold-transition skin-info light-sidebar sidebar-mini">
 <div class="wrapper">
 
   @include('partials/navbar')
@@ -86,7 +86,9 @@
 <!-- ./wrapper -->
   	
 	 
-	  
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBocuQEfY1hThSb_AAefHNLPLCar31bjUE"></script>
+
 	<!-- jQuery 3 -->
 	<script src="{{asset('assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js')}}"></script>
 	
@@ -123,6 +125,11 @@
 
 	<!-- Select2 -->
 	<script src="{{asset('assets/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+
+	<!-- Magnific popup JavaScript -->
+  <script src="{{asset('assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{asset('assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js')}}"></script>
+	
 
 	<!-- <script type="text/javascript">
 		$.ajax({

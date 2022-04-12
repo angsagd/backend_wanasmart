@@ -7,6 +7,8 @@ use App\Http\Controllers\c_menu;
 use App\Http\Controllers\c_role;
 use App\Http\Controllers\c_dashboard;
 use App\Http\Controllers\c_mohonbibit;
+use App\Http\Controllers\c_pengujian;
+use App\Http\Controllers\c_kehutanan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +22,9 @@ use App\Http\Controllers\c_mohonbibit;
 
 Route::get('/', [c_dashboard::class, 'landing']);
 
-Route::get('masuk', [c_login::class, 'loginpage']);
+Route::get('masuk', [c_login::class, 'login_page']);
 Route::post('dologin', [c_login::class, 'dologin']);
+Route::post('ceklogin', [c_login::class, 'ceklogin']);
 Route::get('keluar', [c_login::class, 'dologout']);
 
 Route::group(['middleware' => ['autentikasi','hakakses']], function(){
@@ -65,5 +68,36 @@ Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Menu']], funct
 });
 
 
-
+// LANDING
 Route::get('req_role', [c_role::class, 'req_role']);
+Route::get('permohonan_pengujian', [c_pengujian::class, 'permohonan']);
+Route::get('landing_perhutanan_sosial', [c_kehutanan::class, 'landing_perhutanan_sosial']);
+
+
+// PERHUTANAN SOSIAL
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::get('perhutanan_sosial', [c_kehutanan::class, 'perhutanan_sosial']);
+    Route::get('tambah_perhutanan_sosial', [c_kehutanan::class, 'tambah_perhutanan_sosial']);
+    Route::post('perhutanansosial_dotambah', [c_kehutanan::class, 'dotambah']);
+    Route::get('foto_perhutanan_sosial/{id}', [c_kehutanan::class, 'foto_perhutanan_sosial']);
+    Route::get('hapus_foto_ps/{id}', [c_kehutanan::class, 'hapus_foto_ps']);
+    Route::post('foto_perhutanan_sosial_simpan', [c_kehutanan::class, 'simpan_foto']);
+    Route::get('potensi_hhbk/{id}', [c_kehutanan::class, 'potensi_hhbk']);
+    Route::post('simpan_hhbk', [c_kehutanan::class, 'simpan_hhbk']);
+    Route::get('hapus_potensi_hhbk/{id}', [c_kehutanan::class, 'hapus_potensi_hhbk']);
+    Route::get('edit_perhutanan_sosial/{id}', [c_kehutanan::class, 'edit_perhutanan_sosial']);
+    Route::post('perhutanansosial_doedit', [c_kehutanan::class, 'doedit']);
+
+    Route::get('list_rhl', [c_kehutanan::class, 'list_rhl']);
+    Route::get('tambah_rhl', [c_kehutanan::class, 'tambah_rhl']);
+     Route::post('rhl_dotambah', [c_kehutanan::class, 'rhl_dotambah']);
+});
+
+
+// ADMIN PEMILAHAN DATA KEHUTANAN
+Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Menu']], function(){
+    Route::get('pemilahan_perhutanan_sosial', [c_kehutanan::class, 'pemilahan_perhutanan_sosial']);
+    Route::get('verifikasi_admin/{id}', [c_kehutanan::class, 'verifikasi_admin']);
+});
+
+// 

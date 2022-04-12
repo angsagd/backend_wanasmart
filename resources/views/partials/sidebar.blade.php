@@ -10,14 +10,6 @@
 
     	<li class="header nav-small-cap">MAIN MENU</li>
 
-    	<!-- LANDING PAGE -->
-    	<li id="dashboard" class="">
-	        <a href="{{url('/')}}">
-	          <i class="ti-dashboard"></i>
-	          <span>Landing Page</span>
-	        </a>
-	    </li>  		
-
     	<!-- MENU DASHBOARD -->
 			<li id="dashboard" class="">
 	        <a href="{{url('dashboard')}}">
@@ -26,17 +18,22 @@
 	        </a>
 	    </li>  
 
+		<!-- MENU PERHUTANAN -->
+	    <li class="treeview">
+          <a href="#">
+            <i class="ti-list"></i>
+            <span>Perhutanan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="PerhutananSosial"  class=""><a href="{{url('perhutanan_sosial')}}"><i class="ti-plus"></i>Perhutanan Sosial</a></li>
+            <li id="RHL"><a href="{{url('list_rhl')}}"><i class="ti-plus"></i>Rehabilitasi Hutan Lahan</a></li>
+			<li id="perijinan"><a href="{{url('rhl')}}"><i class="ti-plus"></i>Perijinan</a></li>
+			</ul>
+		</li>
 
-    	@if(in_array('Dasar',Session::get('hakakses')))
-		  <li class="header nav-small-cap">PERSONAL</li>
-			
-	    <li id="permohonan_bibit" class="">
-	        <a href="{{url('mohon-bibit')}}">
-	          <i class="ti-hand-open"></i>
-	          <span>Permohonan Bibit</span>
-	        </a>
-	    </li>
-	    @endif  
 
 	    @if(Session::get('role') == 'Administrator')
 	    <li class="header nav-small-cap">ADMINISTRATOR</li>
@@ -65,7 +62,31 @@
             @endif
 			    </ul>
 			</li>
-			@endif
+		@endif
+
+    <!-- MENU ADMIN KEHUTANAN -->
+    @if(in_array('Kehutanan',Session::get('hakakses')))
+    <li class="treeview menu-open">
+          <a href="#">
+            <i class="ti-map"></i>
+            <span>Kehutanan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            @if(in_array('Pemilahan Data',Session::get('hakakses')))
+            <li id="Pengguna"  class=""><a href="{{url('pemilahan_perhutanan_sosial')}}"><i class="ti-menu"></i>Pemilahan Data</a></li>
+            @endif
+            @if(in_array('Verifikasi KPH',Session::get('hakakses')))
+            <li id="Role"><a href="{{url('role')}}"><i class="ti-shield"></i>Role</a></li>
+            @endif
+            @if(in_array('Verifikasi DKLH',Session::get('hakakses')))
+            <li id="Menu"><a href="{{url('menu')}}"><i class="ti-layout-grid4"></i>Menu</a></li>
+            @endif
+          </ul>
+      </li>
+    @endif
 	
       <!-- MENU LOGOUT -->
 			<li>

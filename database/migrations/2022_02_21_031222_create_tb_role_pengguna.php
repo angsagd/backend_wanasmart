@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\tb_role_pengguna;
 
 class CreateTbRolePengguna extends Migration
 {
@@ -25,6 +26,24 @@ class CreateTbRolePengguna extends Migration
                     ->references('id_role')->on('tb_role')
                     ->onDelete('cascade');
         });
+
+        $item = new tb_role_pengguna;
+        $item->user_id = 1;
+        $item->role_id= 1;
+        $item->save();
+
+        $item = new tb_role_pengguna;
+        $item->user_id = 1;
+        $item->role_id= 2;
+        $item->save();
+
+        $item = new tb_role_pengguna;
+        $item->user_id = 1;
+        $item->role_id= 3;
+        $item->save();
+
+
+
     }
 
     /**

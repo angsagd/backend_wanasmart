@@ -8,6 +8,8 @@
     <link rel="icon" href="../images/favicon.ico">
 
     <title>Wana Smart - Dashboard</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
 	<!-- Bootstrap 4.0-->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap/dist/css/bootstrap.css')}}">
@@ -41,6 +43,10 @@
 	<!-- Select2 -->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/select2/dist/css/select2.min.css')}}">
 	
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+	 <!-- Popup CSS -->
+    <link href="{{asset('assets/vendor_components/Magnific-Popup-master/dist/magnific-popup.css')}}" rel="stylesheet">
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

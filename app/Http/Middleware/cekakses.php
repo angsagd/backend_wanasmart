@@ -25,7 +25,7 @@ class cekakses
         if (!in_array($menu, Session::get('hakakses'))) {
             Session::flash('status','gagal');
             Session::flash('pesan','Anda tidak diijinkan untuk mengakses fitur '.strtoupper($menu));
-            return redirect('/');
+            return redirect('dashboard');
         }
         Session::flash('menu',$menu);
         return $next($request);
