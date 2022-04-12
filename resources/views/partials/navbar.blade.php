@@ -1,9 +1,9 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="{{url('dashboard')}}" class="logo">
 	  <div class="logo-mini">
-		  <!-- <span class="light-logo"><img src="{{asset('foto/logowana.png')}}" alt="logo"></span> -->
-		  <!-- <span class="dark-logo"><img src="{{asset('foto/logowana.png')}}" alt="logo"></span> -->
+		  <span class="light-logo"><img src="{{asset('foto/logowanasmar.png')}}" alt="logo"></span>
+		  <span class="dark-logo"><img src="{{asset('foto/logowanasmar.png')}}" alt="logo"></span>
 	  </div>
     </a>
 
