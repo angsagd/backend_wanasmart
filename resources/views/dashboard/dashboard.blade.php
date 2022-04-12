@@ -52,9 +52,20 @@
 <div class="row">
 	<div class="col-12">
 		<div class="card">
-			<div class="card-header bg-primary">SEBARAN PERHUTANAN SOSIAL DI PROVINSI BALI</div>
+			<div class="card-header bg-primary">SEBARAN PERHUTANAN SOSIAL DAN RHL DI PROVINSI BALI</div>
 			<div class="card-body">
 				<div id="lokasi" style="width:100%;height:600px;"></div>
+				<div class="mt-4">
+					<b class="mb-2">KETERANGAN :</b>
+					<div>
+						<img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png">
+						Perhutanan Sosial
+					</div>
+					<div>
+						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png">
+						Rehabilitasi Hutan dan Lahan
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -75,6 +86,19 @@
 			var marker = new google.maps.Marker({
 			    position: lokasi,
 			    map:peta,
+			    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+			    title:"{{$l->nama_kelompok}}"
+			});
+		<?php } ?>
+
+		<?php foreach ($rhl as $l) { ?>
+			var lati = parseFloat("{{$l->lat}}");
+			var longi = parseFloat("{{$l->lng}}");
+			var lokasi = { lat: lati, lng: longi };
+			var marker = new google.maps.Marker({
+			    position: lokasi,
+			    map:peta,
+			    icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
 			    title:"{{$l->nama_kelompok}}"
 			});
 		<?php } ?>
