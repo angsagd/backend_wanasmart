@@ -27,7 +27,7 @@
 							@endphp
 							@foreach($rhl as $r)
 							<tr class="text-center">
-								<td>{{$no}}</td>
+								<td>{{$no++}}</td>
 								<td>{{$r->nama_kelompok}}</td>
 								<td>{{$r->luas}}</td>
 								<td>{{$r->umur}}</td>
