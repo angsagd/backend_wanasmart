@@ -81,24 +81,21 @@ class c_kehutanan extends Controller
 
         $idps = $request->id_perhutanan_sosial;
         foreach($request->file('foto_ps') as $file){
-            try{
-                $image = new tb_foto_perhutanan_sosial;
-                $name = time().md5(rand()).'.' .$file->extension();
-                $size = $file->getSize();
-                $file->move(public_path().'/files/', $name);
-                $image->path = $name;
-                $image->perhutanan_sosial_id = $idps;
-                if ($image->save()) {
-                    Session::flash('status','sukses');
-                    Session::flash('pesan','Foto berhasil diupload');
-                } else {
-                    Session::flash('status','gagal');
-                    Session::flash('pesan','Foto gagal diupload');
-                }
-            } catch(e){
+
+            $image = new tb_foto_perhutanan_sosial;
+            $name = time().md5(rand()).'.' .$file->extension();
+            $size = $file->getSize();
+            $file->move(public_path().'/files/', $name);
+            $image->path = $name;
+            $image->perhutanan_sosial_id = $idps;
+            if ($image->save()) {
+                Session::flash('status','sukses');
+                Session::flash('pesan','Foto berhasil diupload');
+            } else {
                 Session::flash('status','gagal');
-                Session::flash('pesan',e);
+                Session::flash('pesan','Foto gagal diupload');
             }
+           
         }
         return redirect('foto_perhutanan_sosial/'.$idps);
     }
