@@ -95,7 +95,7 @@ Route::group(['middleware' => ['autentikasi']], function(){
 
 
 // ADMIN PEMILAHAN DATA KEHUTANAN
-Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Menu']], function(){
+Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Pemilahan Data']], function(){
     Route::get('pemilahan_perhutanan_sosial', [c_kehutanan::class, 'pemilahan_perhutanan_sosial']);
     Route::get('verifikasi_admin/{id}', [c_kehutanan::class, 'verifikasi_admin']);
 });

@@ -31,7 +31,7 @@ class c_role extends Controller
 
     public function req_role(){
         $id = Session::get('id');
-        $pengguna = tb_user::where('id_google','=',$id)->first();
+        $pengguna = tb_user::where('id','=',$id)->first();
         $data['role'] = tb_role_pengguna::select('tb_role.id_role','tb_role.nama_role','tb_role_pengguna.user_id')
                                 ->join('tb_role','tb_role.id_role','=','tb_role_pengguna.role_id')
                                 ->join('tb_user','tb_user.id','=','tb_role_pengguna.user_id')
