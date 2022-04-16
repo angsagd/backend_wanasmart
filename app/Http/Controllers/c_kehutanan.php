@@ -8,8 +8,10 @@ use App\Models\tb_user;
 use App\Models\tb_foto_perhutanan_sosial;
 use App\Models\tb_potensi_hhbk;
 use App\Models\tb_rhl;
+use App\Models\tb_ps_kph;
 use App\Models\tb_status_rhl;
 use App\Models\tb_rhl_jenis_pohon;
+use App\Models\tb_ps_catatan;
 use App\Models\tb_verifikasi_persos;
 use Illuminate\Support\Facades\Storage;
 use Session;
@@ -26,11 +28,12 @@ class c_kehutanan extends Controller
     }
 
     function tambah_perhutanan_sosial(){
-        return view('kehutanan/perhutanan_sosial_page');
+        return view('kehutanan.perhutanan_sosial_page');
     }
 
     function landing_perhutanan_sosial(){
-        return view('landing/kehutanan/perhutanan_sosial');
+        // return view('landing/kehutanan/perhutanan_sosial');
+        return view('landing.kehutanan.perhutanan_sosial');
     }
 
     function dotambah(Request $request){
@@ -138,13 +141,22 @@ class c_kehutanan extends Controller
     }
 
     function pemilahan_perhutanan_sosial(){
-        $data['perhutanan'] = tb_perhutanan_sosial::join('tb_verifikasi_persos','tb_verifikasi_persos.perhutanan_sosial_id','=','tb_perhutanan_sosial.id_perhutanan_sosial')->where('pemilahan_admin','=','0')->get();
+        $data['perhutanan'] = tb_perhutanan_sosial::
+            join('tb_verifikasi_persos','tb_verifikasi_persos.perhutanan_sosial_id','=','tb_perhutanan_sosial.id_perhutanan_sosial')
+            ->leftjoin('tb_ps_kphs','tb_ps_kphs.ps_id','=','tb_perhutanan_sosial.id_perhutanan_sosial')
+            ->where('pemilahan_admin','=','0')
+            ->get();
+
+        $data['rhl'] = tb_rhl::join('tb_status_rhls','tb_status_rhls.rhl_id','=','tb_rhls.id_rhl')
+                    ->where('pemilahan_admin','=',0)
+                    ->get();
         return view('kehutanan/admin/pemilahan_data',$data);
     }
 
     function verifikasi_admin($id){
         $data['hhbk'] = tb_potensi_hhbk::where('perhutanan_sosial_id','=',$id)->get();
         $data['foto'] = tb_foto_perhutanan_sosial::where('perhutanan_sosial_id','=',$id)->get();
+        $data['catatan'] = tb_ps_catatan::where('ps_id','=',$id)->orderby('created_at','DESC')->get();
         $data['kehutanan'] = tb_perhutanan_sosial::select('tb_perhutanan_sosial.*','tb_user.nama','tb_user.email','tb_user.photo')
                             ->join('tb_user','tb_user.id','=','tb_perhutanan_sosial.user_id')
                             ->where('id_perhutanan_sosial','=',$id)->first();
@@ -240,6 +252,23 @@ class c_kehutanan extends Controller
         }
         return redirect('list_rhl');
     }
+
+    function doverifikasi_admin(Request $request){
+        $data = new tb_ps_kph;
+        $data->ps_id = $request->ps_id;
+        $data->id_kph = $request->kph;
+        if ($data->save()) {
+            $verif = tb_verifikasi_persos::where('perhutanan_sosial_id','=',$request->ps_id)->first();
+            $verif->pemilahan_admin = true;
+            $verif->save();
+            Session::flash('status','sukses');
+            Session::flash('pesan','Proses verifikasi berhasil tersimpan');
+        } else {
+            Session::flash('status','gagal');
+            Session::flash('pesan','Proses verifikasi gagal disimpan');
+        }
+        return redirect('pemilahan_perhutanan_sosial');
+     }
     
         
 }

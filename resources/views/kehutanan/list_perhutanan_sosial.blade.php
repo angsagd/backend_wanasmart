@@ -67,14 +67,17 @@
 								@endif
 							</td>
 							<td class="text-center">
-								<a href="{{url('edit_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
-									<button title="Edit Data" class="btn btn-xs btn-circle btn-warning"><i class="fa fa-edit"></i></button>
+								<a target="_blank" href="{{url('edit_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
+									<button title="Edit Data" class="btn btn-xs btn-block btn-warning"><i class="fa fa-edit mr-2"></i>Perbarui</button>
 								</a>
-								<a href="{{url('foto_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
-									<button title="Galeri" class="btn btn-xs btn-circle btn-info"><i class="fa fa-image"></i></button>
+								<a target="_blank" href="{{url('foto_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
+									<button title="Galeri" class="btn btn-xs btn-block btn-info"><i class="fa fa-image mr-2"></i>Galeri Foto</button>
 								</a>
-								<a href="{{url('potensi_hhbk')}}/{{$ps->id_perhutanan_sosial}}">
-									<button title="Potensi HHBK" class="btn btn-xs btn-circle btn-info"><i class="fa fa-money"></i></button>
+								<a target="_blank" href="{{url('potensi_hhbk')}}/{{$ps->id_perhutanan_sosial}}">
+									<button title="Potensi HHBK" class="btn btn-xs btn-block btn-success"><i class="fa fa-money mr-2"></i>Potensi HHBK</button>
+								</a>
+								<a target="_blank" href="{{url('history_catatan')}}/{{$ps->id_perhutanan_sosial}}">
+									<button title="Potensi HHBK" class="btn btn-xs btn-block btn-danger"><i class="fa fa-envelope mr-2"></i>History Catatan</button>
 								</a>
 							</td>
 						</tr>

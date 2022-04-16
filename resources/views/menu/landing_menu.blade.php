@@ -22,17 +22,9 @@
 						<tr>
 							<td class="text-center">{{$no++}}</td>
 							<td class="text-center">
-								<div class="btn-group mb-5">
-								  <button type="button" class="btn btn-primary btn-rounded btn-outline">Pengaturan</button>
-								  <button type="button" class="btn btn-primary btn-rounded btn-outline dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									<span class="caret"></span>
-									<span class="sr-only">Toggle Dropdown</span>
-								  </button>
-								  <div class="dropdown-menu">		
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item bg-danger" href="{{url('hapus_menu')}}/{{$m->id_menu}}" onclick="return confirm('Apakah anda yakin menghapus Menu {{$m->nama_menu}}')">Hapus</a>
-								  </div>
-								</div>
+									<a href="{{url('hapus_menu')}}/{{$m->id_menu}}" onclick="return confirm('Apakah anda yakin menghapus Menu {{$m->nama_menu}}')">
+									<button class="btn btn-danger btn-xs btn-block"><i class="fa fa-trash mr-2"></i>Hapus</button>
+								</a>
 							</td>
 							<td class="text-center">{{$m->parent_menu}}</td>
 							<td>{{$m->nama_menu}}</td>

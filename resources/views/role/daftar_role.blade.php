@@ -25,19 +25,12 @@
 							<tr>
 								<td class="text-center">{{$no++}}</td>
 								<td class="text-center">
-									<div class="btn-group mb-5">
-									  <button type="button" class="btn btn-primary btn-rounded btn-outline">Pengaturan</button>
-									  <button type="button" class="btn btn-primary btn-rounded btn-outline dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-										<span class="caret"></span>
-										<span class="sr-only">Toggle Dropdown</span>
-									  </button>
-									  <div class="dropdown-menu">
-										<a class="dropdown-item" href="{{url('kelola_akses')}}/{{$p->id_role}}">Kelola Akses</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item bg-danger" href="{{url('hapus_role')}}/{{$p->id_role}}" onclick="return confirm('Apakah anda yakin menghapus Role {{$p->nama_role}}')">Hapus</a>
-						
-									  </div>
-									</div>
+									<a href="{{url('kelola_akses')}}/{{$p->id_role}}">
+										<button class="btn btn-primary btn-block btn-xs"><i class="fa fa-cog mr-2"></i>Kelola Akses</button>
+									</a>
+									<a href="{{url('hapus_role')}}/{{$p->id_role}}" onclick="return confirm('Apakah anda yakin menghapus Role {{$p->nama_role}}')">
+										<button class="btn btn-danger btn-block btn-xs"><i class="fa fa-trash mr-2"></i>Hapus</button>
+									</a>
 								</td>
 								<td>{{$p->nama_role}}</td>
 								

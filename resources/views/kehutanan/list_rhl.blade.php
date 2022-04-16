@@ -11,13 +11,16 @@
 					<button class="btn btn-primary mb-4"><i class="fa fa-plus mr-2"></i>Pengajuan RHL</button>
 				</a>
 				<div class="table-responsive">
-					<table class="table table-striped" id="example1">
+					<table class="table table-striped" id="example">
 						<thead class="text-center">
 							<th>No</th>
 							<th>Nama</th>
 							<th>Luas (Ha)</th>
 							<th>Umur (Tahun)</th>
 							<th>Alamat</th>
+							<th>Kelurahan / Desa</th>
+							<th>Kecamatan</th>
+							<th>Kabupaten</th>
 							<th>Status</th>
 							<th>Aksi</th>
 						</thead>
@@ -31,12 +34,10 @@
 								<td>{{$r->nama_kelompok}}</td>
 								<td>{{$r->luas}}</td>
 								<td>{{$r->umur}}</td>
-								<td class="text-left">
-									{{$r->alamat}}<br>
-									Kelurahan / Desa {{$r->kelurahan}}<br>
-									Kecamatan {{$r->kecamatan}}<br>
-									{{$r->kabupaten}}
-								</td>
+								<td class="text-left">{{$r->alamat}}</td>
+								<td>{{$r->kelurahan}}</td>
+								<td>{{$r->kecamatan}}</td>
+								<td>{{$r->kabupaten}}</td>
 								<td>
 									@if($r->tercatat == 1)
 									<span class="badge badge-info"><i class="fa fa-check mr-2"></i>Tercatat</span>
@@ -68,7 +69,17 @@
 									<span class="badge badge-danger"><i class="fa fa-close mr-2"></i>Tayang</span>
 									@endif
 								</td>
-								<td></td>
+								<td>
+									<a target="_blank" href="{{url('edit_rhl')}}/{{$r->id_rhl}}">
+										<button class="btn btn-xs btn-block btn-primary"><i class="fa fa-edit mr-2"></i>Perbarui</button>
+									</a>
+									<a target="_blank" href="{{url('galeri_rhl')}}/{{$r->id_rhl}}">
+										<button class="btn btn-xs btn-block btn-warning"><i class="fa fa-image mr-2"></i>Galeri</button>
+									</a>
+									<a target="_blank" href="{{url('history_catatan_rhl')}}/{{$r->id_rhl}}">
+										<button class="btn btn-xs btn-block btn-success"><i class="fa fa-paper-plane mr-2"></i>History Catatan</button>
+									</a>
+								</td>
 							</tr>
 							@endforeach
 						</tbody>

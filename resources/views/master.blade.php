@@ -2,7 +2,7 @@
 <html lang="en">
   @include('partials/head')
 
-<body class="hold-transition skin-info light-sidebar sidebar-mini">
+<body class="hold-transition skin-danger dark-sidebar sidebar-mini">
 <div class="wrapper">
 
   @include('partials/navbar')
