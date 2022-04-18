@@ -15,6 +15,7 @@ use App\Http\Controllers\c_verifikasi_admin;
 use App\Http\Controllers\c_catatan_ps;
 use App\Http\Controllers\c_catatan_rhl;
 use App\Http\Controllers\c_verifikasi_dinas;
+use App\Http\Controllers\c_panduan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -145,4 +146,12 @@ Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Verifikasi Din
     Route::get('doverif_dinas/{id}', [c_verifikasi_dinas::class, 'doverif_dinas']);
     Route::get('verifikasi_rhl_dinas/{id}', [c_verifikasi_dinas::class, 'verifikasi_rhl_dinas']);
     Route::get('doverif_rhl_dinas/{id}', [c_verifikasi_dinas::class, 'doverif_rhl_dinas']);
+});
+
+// ROUTE PANDUAN
+Route::get('panduan', [c_panduan::class, 'panduan']);
+Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Input Panduan']], function(){
+    Route::get('input_panduan', [c_panduan::class, 'input_panduan']);
+    Route::post('panduan_dotambah', [c_panduan::class, 'dotambah']);
+    Route::get('panduan_hapus/{id}', [c_panduan::class, 'hapus']);
 });

@@ -37,11 +37,6 @@
             </li>
             @endif
 
-
-
-
-
-
             @if(in_array('Master Data',Session::get('hakakses')))
             <li class="treeview menu-open">
                 <a href="#">
@@ -60,6 +55,9 @@
                     @endif
                     @if(in_array('Menu',Session::get('hakakses')))
                     <li id="Menu"><a href="{{url('menu')}}"><i class="ti-layout-grid4"></i>Menu</a></li>
+                    @endif
+                    @if(in_array('Input Panduan',Session::get('hakakses')))
+                    <li id="Menu"><a href="{{url('input_panduan')}}"><i class="ti-layout-grid4"></i>Input Panduan</a></li>
                     @endif
                 </ul>
             </li>
@@ -85,9 +83,26 @@
                     @if(in_array('Verifikasi Dinas',Session::get('hakakses')))
                     <li id="Menu"><a href="{{url('list_verifikasi_dinas')}}"><i class="ti-layout-grid4"></i>Verifikasi Dinas</a></li>
                     @endif
+                    
                 </ul>
             </li>
             @endif
+
+            <!-- PANDUAN -->
+            <li>
+                <a href="{{url('panduan')}}">
+                    <i class="ti-blackboard"></i>
+                    <span>Panduan</span>
+                </a>
+            </li>
+
+            <!-- PENGADUAN -->
+            <!-- <li>
+                <a href="{{url('pengaduan')}}">
+                    <i class="ti-help"></i>
+                    <span>Pengaduan</span>
+                </a>
+            </li> -->
 
             <!-- MENU LOGOUT -->
             <li>
