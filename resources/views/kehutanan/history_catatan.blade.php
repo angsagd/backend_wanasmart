@@ -40,7 +40,7 @@
 		<div class="card">
 			<div class="card-header bg-primary">Tanggapan</div>
 			<div class="card-body">
-				<form action="{{url('berikan_tanggapan')}}" method="post">
+				<form onsubmit="return confirm('Yakin akan mengirimkan tanggapan ini ?')" action="{{url('berikan_tanggapan')}}" method="post">
 					@csrf
 					<input type="hidden" name="ps_id" value="{{$permohonan->id_perhutanan_sosial}}">
 					<div class="form-group">
