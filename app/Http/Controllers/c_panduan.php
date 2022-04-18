@@ -55,8 +55,9 @@ class c_panduan extends Controller
             Session::flash('status','gagal');
             Session::flash('pesan','Panduan gagal dihapus');
         }
-        
         return redirect('panduan');
     }
+
+    
 
 }

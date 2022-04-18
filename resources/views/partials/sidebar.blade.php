@@ -21,7 +21,7 @@
 
             @if(Session::get('role') == "Pengguna")
             <!-- MENU PERHUTANAN -->
-            <li class="treeview">
+            <li class="treeview menu-open">
                 <a href="#">
                     <i class="ti-list"></i>
                     <span>Perhutanan</span>
@@ -38,7 +38,7 @@
             @endif
 
             @if(in_array('Master Data',Session::get('hakakses')))
-            <li class="treeview menu-open">
+            <li class="treeview">
                 <a href="#">
                     <i class="ti-list"></i>
                     <span>Master Data</span>
@@ -65,7 +65,7 @@
 
             <!-- MENU ADMIN KEHUTANAN -->
             @if(in_array('Kehutanan',Session::get('hakakses')))
-            <li class="treeview menu-open">
+            <li class="treeview">
                 <a href="#">
                     <i class="ti-map"></i>
                     <span>Kehutanan</span>
@@ -89,7 +89,7 @@
             @endif
 
             <!-- PANDUAN -->
-            <li>
+            <li class="">
                 <a href="{{url('panduan')}}">
                     <i class="ti-blackboard"></i>
                     <span>Panduan</span>
@@ -97,15 +97,15 @@
             </li>
 
             <!-- PENGADUAN -->
-            <!-- <li>
+            <li>
                 <a href="{{url('pengaduan')}}">
                     <i class="ti-help"></i>
                     <span>Pengaduan</span>
                 </a>
-            </li> -->
+            </li>
 
             <!-- MENU LOGOUT -->
-            <li>
+            <li class="">
                 <a href="{{url('keluar')}}">
                     <i class="ti-power-off"></i>
                     <span>Log Out</span>

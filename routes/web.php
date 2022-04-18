@@ -16,6 +16,7 @@ use App\Http\Controllers\c_catatan_ps;
 use App\Http\Controllers\c_catatan_rhl;
 use App\Http\Controllers\c_verifikasi_dinas;
 use App\Http\Controllers\c_panduan;
+use App\Http\Controllers\c_pengaduan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,11 +29,15 @@ use App\Http\Controllers\c_panduan;
 */
 
 Route::get('/', [c_dashboard::class, 'landing']);
-
 Route::get('masuk', [c_login::class, 'login_page']);
 Route::post('dologin', [c_login::class, 'dologin']);
 Route::post('ceklogin', [c_login::class, 'ceklogin']);
 Route::get('keluar', [c_login::class, 'dologout']);
+
+// LANDING
+Route::get('req_role', [c_role::class, 'req_role']);
+Route::get('permohonan_pengujian', [c_pengujian::class, 'permohonan']);
+Route::get('landing_perhutanan_sosial', [c_kehutanan::class, 'landing_perhutanan_sosial']);
 
 Route::group(['middleware' => ['autentikasi','hakakses']], function(){
     Route::get('dashboard', [c_dashboard::class, 'index']);
@@ -75,10 +80,7 @@ Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Menu']], funct
 });
 
 
-// LANDING
-Route::get('req_role', [c_role::class, 'req_role']);
-Route::get('permohonan_pengujian', [c_pengujian::class, 'permohonan']);
-Route::get('landing_perhutanan_sosial', [c_kehutanan::class, 'landing_perhutanan_sosial']);
+
 
 
 // PERHUTANAN SOSIAL
@@ -149,9 +151,21 @@ Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Verifikasi Din
 });
 
 // ROUTE PANDUAN
-Route::get('panduan', [c_panduan::class, 'panduan']);
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::get('panduan', [c_panduan::class, 'panduan']);
+});
 Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Input Panduan']], function(){
     Route::get('input_panduan', [c_panduan::class, 'input_panduan']);
     Route::post('panduan_dotambah', [c_panduan::class, 'dotambah']);
     Route::get('panduan_hapus/{id}', [c_panduan::class, 'hapus']);
+});
+
+// ROUTE PENGADUAN
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::get('pengaduan', [c_pengaduan::class, 'list_pengaduan']);
+    Route::get('input_pengaduan', [c_pengaduan::class, 'input_pengaduan']);
+    Route::post('tanggapan_dotambah', [c_pengaduan::class, 'tanggapan_dotambah']);
+    Route::get('tanggapan_pengaduan/{id}', [c_pengaduan::class, 'tanggapan_pengaduan']);
+    Route::post('pengaduan_dotambah', [c_pengaduan::class, 'dotambah']);
+    Route::get('tutup_pengaduan/{id}', [c_pengaduan::class, 'tutup_pengaduan']);
 });
