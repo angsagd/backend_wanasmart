@@ -9,6 +9,7 @@
 			<div class="card-body">
 				<!-- START TIMELINE-->
 				<div class="timeline timeline-line-dotted">
+					@if($catatan->first())
 					@foreach($catatan as $c)
 					<div class="timeline-item">
 						<div class="timeline-point timeline-point-success">
@@ -27,6 +28,9 @@
 						</div>
 					</div>
 					@endforeach
+					@else
+					<div class="text-center">Belum Ada Catatan</div>
+					@endif
 				</div>
 				<!-- FINISH TIMELINE -->
 			</div>
@@ -38,7 +42,7 @@
 			<div class="card-body">
 				<form action="{{url('berikan_tanggapan')}}" method="post">
 					@csrf
-					<input type="hidden" name="ps_id" value="{{$c->ps_id}}">
+					<input type="hidden" name="ps_id" value="{{$permohonan->id_perhutanan_sosial}}">
 					<div class="form-group">
 						<label>Berikan tanggapan anda :</label>
 						<textarea class="form-control" style="height:100px" required name="catatan"></textarea>

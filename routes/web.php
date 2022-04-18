@@ -79,10 +79,6 @@ Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Menu']], funct
     Route::get('hapus_menu/{id}', [c_menu::class, 'hapus_menu']);
 });
 
-
-
-
-
 // PERHUTANAN SOSIAL
 Route::group(['middleware' => ['autentikasi']], function(){
     Route::get('perhutanan_sosial', [c_kehutanan::class, 'perhutanan_sosial']);
