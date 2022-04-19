@@ -9,7 +9,7 @@
 			<span class="fa fa-clock-o font-size-50"></span>
 		  </div>
 		  <div class="py-30 bg-white text-dark">
-			<div class="font-size-30">{{$permohonan_total}}</div>
+			<div class="font-size-30">{{$jumlah_verifikasi}}</div>
 			<span>Permohonan Verifikasi</span>
 		  </div>
 		</div>
@@ -20,7 +20,7 @@
 			<span class="fa fa-check font-size-50"></span>
 		  </div>
 		  <div class="py-30 bg-white text-dark">
-			<div class="font-size-30">{{rand(10,100)}}</div>
+			<div class="font-size-30">{{$jumlah_terverifikasi}}</div>
 			<span>Data<br> Terverifikasi</span>
 		  </div>
 		</div>
@@ -31,7 +31,7 @@
 			<span class="fa fa-map-pin font-size-50"></span>
 		  </div>
 		  <div class="py-30 bg-white text-dark">
-			<div class="font-size-30">{{rand(10,100)}}</div>
+			<div class="font-size-30">{{$jumlah_ps}}</div>
 			<span>Perhutanan <br>Sosial</span>
 		  </div>
 		</div>
@@ -42,7 +42,7 @@
 			<span class="fa fa-globe font-size-50"></span>
 		  </div>
 		  <div class="py-30 bg-white text-dark">
-			<div class="font-size-30">{{rand(10,100)}}</div>
+			<div class="font-size-30">{{$jumlah_rhl}}</div>
 			<span>Rehabilitasi Hutan Lahan</span>
 		  </div>
 		</div>

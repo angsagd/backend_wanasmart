@@ -1,6 +1,7 @@
 <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{{url('/')}}">Beranda</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li class="dropdown"><a href="#"><span>Kehutanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Pemanfaatan Hutan</a></li>
@@ -16,7 +17,7 @@
               <li><a href="#">Indek Kualitas Lingkungan Hidup (IKLH)</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link" href="#">Peraturan</a></li>
+         
           <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <!-- <li><a href="{{url('permohonan_pengujian')}}">Laboratorium Pengujian</a></li> -->
@@ -26,9 +27,12 @@
               <li><a href="#">Bimbingan / Penyuluhan</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#features">Fitur</a></li> -->
           <li><a class="nav-link scrollto" href="#gallery">Galeri</a></li>
+          <li><a class="nav-link" href="#peraturan">Peraturan</a></li>
+          <li><a class="nav-link" href="#panduan">Panduan</a></li>
+          
+          <!-- <li><a class="nav-link scrollto" href="#features">Fitur</a></li> -->
+          
           @if(Session::get('login'))
           <li><a class="nav-link" href="{{url('dashboard')}}">Dashboard</a></li>
           @else
