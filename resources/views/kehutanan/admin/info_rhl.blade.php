@@ -67,8 +67,8 @@
 							</div>
 					@else
 					@foreach($foto as $f)
-					<a href="{{url('files')}}/{{$f->path}}" title="Caption. Can be aligned to any side and contain any HTML.">
-						<img src="{{url('files')}}/{{$f->path}}" width="32.5%" alt="" />
+					<a href="{{url('files/foto/')}}/{{$f->path}}" title="{{$kehutanan->nama_kelompok}}">
+						<img src="{{url('files/foto/')}}/{{$f->path}}" width="32.5%" alt="" />
 					</a>
 					@endforeach
 					@endif
@@ -85,6 +85,7 @@
 			<div class="card-body">
 				<!-- START TIMELINE-->
 				<div class="timeline timeline-line-dotted">
+					@if($catatan->first())
 					@foreach($catatan as $c)
 					<div class="timeline-item">
 						<div class="timeline-point timeline-point-success">
@@ -103,6 +104,9 @@
 						</div>
 					</div>
 					@endforeach
+					@else
+					<div class="text-center">Belum ada tanggapan</div>
+					@endif
 				</div>
 				<!-- FINISH TIMELINE -->
 			</div>

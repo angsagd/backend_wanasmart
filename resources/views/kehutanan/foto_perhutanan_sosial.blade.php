@@ -48,7 +48,7 @@
 					@else
 					@foreach($foto as $f)
 					<div class="col-sm-12 col-md-3 mt-2" id="images{{$f->id_foto_perhutanan_sosial}}">
-						<img style="height: 200px;" class="img-thumbnail m-1" src="{{url('files')}}/{{$f->path}}">
+						<img style="height: 200px;" class="img-thumbnail m-1" src="{{url('files/foto/')}}/{{$f->path}}">
 						<br>
 						<a href="{{url('hapus_foto_ps')}}/{{$f->id_foto_perhutanan_sosial}}">
 						<button onclick="return confirm('Apakah anda yakin menghapus foto ini ?')" class="btn btn-danger btn-xs"><i class="fa fa-trash mr-1"></i>Hapus</button>

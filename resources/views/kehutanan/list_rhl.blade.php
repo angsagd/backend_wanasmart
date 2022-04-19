@@ -11,7 +11,7 @@
 					<button class="btn btn-primary mb-4"><i class="fa fa-plus mr-2"></i>Pengajuan RHL</button>
 				</a>
 				<div class="table-responsive">
-					<table class="table table-striped" id="example">
+					<table class="table table-striped" id="example1">
 						<thead class="text-center">
 							<th>No</th>
 							<th>Nama</th>
@@ -63,11 +63,7 @@
 									<span class="badge badge-danger"><i class="fa fa-close mr-2"></i>Verifikasi DKLH</span>
 									@endif
 									<br>
-									@if($r->tayang == 1)
-									<span class="badge badge-info"><i class="fa fa-check mr-2"></i>Tayang</span>
-									@else
-									<span class="badge badge-danger"><i class="fa fa-close mr-2"></i>Tayang</span>
-									@endif
+									
 								</td>
 								<td>
 									<a target="_blank" href="{{url('edit_rhl')}}/{{$r->id_rhl}}">

@@ -84,11 +84,10 @@ class c_kehutanan extends Controller
 
         $idps = $request->id_perhutanan_sosial;
         foreach($request->file('foto_ps') as $file){
-
             $image = new tb_foto_perhutanan_sosial;
-            $name = time().md5(rand()).'.' .$file->extension();
+            $name = 'PS'.$idps.'_'.time().md5(rand()).'.' .$file->extension();
             $size = $file->getSize();
-            $file->move(public_path().'/files/', $name);
+            $file->move(public_path().'/files/foto/', $name);
             $image->path = $name;
             $image->perhutanan_sosial_id = $idps;
             if ($image->save()) {
@@ -105,7 +104,7 @@ class c_kehutanan extends Controller
 
     function hapus_foto_ps($id){
         $foto = tb_foto_perhutanan_sosial::find($id);
-        $path = public_path().'/files/'.$foto->path;
+        $path = public_path().'/files/foto/'.$foto->path;
         File::delete($path);
         $foto->delete();
         return back();

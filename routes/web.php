@@ -17,6 +17,7 @@ use App\Http\Controllers\c_catatan_rhl;
 use App\Http\Controllers\c_verifikasi_dinas;
 use App\Http\Controllers\c_panduan;
 use App\Http\Controllers\c_pengaduan;
+use App\Http\Controllers\c_regulasi;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -110,7 +111,10 @@ Route::group(['middleware' => ['autentikasi']], function(){
     Route::get('hapus_foto_rhl/{id}', [c_rhl::class, 'hapus_foto']);
 });
 
-
+// TANGGAPAN
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::post('do_catatan_rhl', [c_catatan_rhl::class, 'do_catatan_rhl']);
+});
 
 // ADMIN PEMILAHAN DATA KEHUTANAN
 Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Pemilahan Data']], function(){
@@ -118,9 +122,7 @@ Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Pemilahan Data
     Route::get('verifikasi_admin/{id}', [c_kehutanan::class, 'verifikasi_admin']);
     Route::post('doverifikasi_admin', [c_kehutanan::class, 'doverifikasi_admin']);
     Route::post('do_catatan_admin', [c_catatan_ps::class, 'do_catatan_admin']);
-
     Route::get('verifikasi_rhl_admin/{id}', [c_verifikasi_admin::class, 'verifikasi_rhl_admin']);
-    Route::post('do_catatan_rhl', [c_catatan_rhl::class, 'do_catatan_rhl']);
     Route::post('doverifikasi_rhl_admin', [c_verifikasi_admin::class, 'doverifikasi_rhl_admin']);
 
 });
@@ -164,4 +166,14 @@ Route::group(['middleware' => ['autentikasi']], function(){
     Route::get('tanggapan_pengaduan/{id}', [c_pengaduan::class, 'tanggapan_pengaduan']);
     Route::post('pengaduan_dotambah', [c_pengaduan::class, 'dotambah']);
     Route::get('tutup_pengaduan/{id}', [c_pengaduan::class, 'tutup_pengaduan']);
+});
+
+// ROUTE REGULASI
+Route::group(['middleware' => ['autentikasi']], function(){
+    Route::get('utama_regulasi', [c_regulasi::class, 'utama_regulasi']);
+});
+Route::group(['middleware' => ['autentikasi','hakakses','cekakses:Input Regulasi']], function(){
+    Route::get('hapus_regulasi/{id}', [c_regulasi::class, 'hapus']);
+    Route::get('input_regulasi', [c_regulasi::class, 'input_regulasi']);
+    Route::post('regulasi_dotambah', [c_regulasi::class, 'dotambah']);
 });

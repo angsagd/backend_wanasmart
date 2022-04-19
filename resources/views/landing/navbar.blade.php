@@ -9,17 +9,17 @@
               <li><a href="#">Rehabilitasi Hutan dan Lahan (RHL)</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Lingkungan Hidup</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li class="dropdown"><a href="#"><span>Lingkungan Hidup</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Pengelolaan Sampah</a></li>
               <li><a href="#">AMDAL</a></li>
               <li><a href="#">Indek Kualitas Lingkungan Hidup (IKLH)</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a class="nav-link" href="#">Peraturan</a></li>
           <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{url('permohonan_pengujian')}}">Laboratorium Pengujian</a></li>
+              <!-- <li><a href="{{url('permohonan_pengujian')}}">Laboratorium Pengujian</a></li> -->
               <li><a href="#">Permohonan Bibit</a></li>
               <li><a href="#">Perhutanan Sosial</a></li>
               <li><a href="#">Pendampingan Pengukuran</a></li>

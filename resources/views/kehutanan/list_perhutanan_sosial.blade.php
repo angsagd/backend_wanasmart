@@ -60,11 +60,7 @@
 								<span class="badge badge-danger"><i class="fa fa-close mr-2"></i>Verifikasi DKLH</span>
 								@endif
 								<br>
-								@if($ps->tayang == 1)
-								<span class="badge badge-info"><i class="fa fa-check mr-2"></i>Tayang</span>
-								@else
-								<span class="badge badge-danger"><i class="fa fa-close mr-2"></i>Tayang</span>
-								@endif
+								
 							</td>
 							<td class="text-center">
 								<a target="_blank" href="{{url('edit_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">

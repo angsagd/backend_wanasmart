@@ -57,9 +57,9 @@ class c_rhl extends Controller
         foreach($request->file('foto_ps') as $file){
 
             $image = new tb_foto_rhl;
-            $name = time().md5(rand()).'.' .$file->extension();
+            $name = 'RHL'.$idps.'_'.time().md5(rand()).'.' .$file->extension();
             $size = $file->getSize();
-            $file->move(public_path().'/files/', $name);
+            $file->move(public_path().'/files/foto/', $name);
             $image->path = $name;
             $image->rhl_id = $idps;
             if ($image->save()) {
@@ -76,7 +76,7 @@ class c_rhl extends Controller
 
     function hapus_foto($id){
         $foto = tb_foto_rhl::find($id);
-        $path = public_path().'/files/'.$foto->path;
+        $path = public_path().'/files/foto/'.$foto->path;
         File::delete($path);
         $foto->delete();
         return back();

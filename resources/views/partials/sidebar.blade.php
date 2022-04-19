@@ -24,7 +24,7 @@
             <li class="treeview menu-open">
                 <a href="#">
                     <i class="ti-list"></i>
-                    <span>Perhutanan</span>
+                    <span>Kehutanan</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
@@ -101,6 +101,15 @@
                 <a href="{{url('pengaduan')}}">
                     <i class="ti-help"></i>
                     <span>Pengaduan</span>
+                </a>
+            </li>
+
+
+            <!-- REGULASI -->
+            <li>
+                <a href="{{url('utama_regulasi')}}">
+                    <i class="ti-stamp"></i>
+                    <span>Regulasi</span>
                 </a>
             </li>
 
