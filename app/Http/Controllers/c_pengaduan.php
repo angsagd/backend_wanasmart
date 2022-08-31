@@ -16,8 +16,8 @@ class c_pengaduan extends Controller
             ->where('status',true)
             ->get();
         } else {
-            $data['pengaduan'] = tb_pengaduan::
-            join('tb_user','tb_user.id','=','tb_pengaduans.user_id')
+            $data['pengaduan'] = tb_pengaduan::select('tb_pengaduans.*','tb_user.id')
+            ->join('tb_user','tb_user.id','=','tb_pengaduans.user_id')
             ->where('user_id',Session::get('id'))
             ->where('status',true)
             ->get();
