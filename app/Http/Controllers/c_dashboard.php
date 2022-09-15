@@ -12,6 +12,7 @@ use App\Models\tb_verifikasi_persos;
 use App\Models\tb_regulasi;
 use App\Models\tb_panduan;
 use App\Models\tb_foto_rhl;
+use App\Models\tb_pengunjung;
 use Session;
 
 class c_dashboard extends Controller
@@ -49,6 +50,12 @@ class c_dashboard extends Controller
     }
 
     public function landing(){
+
+        $ip = $this->getVisIPAddr();
+        $tamu = new tb_pengunjung;
+        $tamu->ip_address = $ip;
+        $tamu->save();
+
         $jumlah_verifikasi_ps = 
         tb_perhutanan_sosial::join('tb_verifikasi_persos','tb_verifikasi_persos.perhutanan_sosial_id','=','tb_perhutanan_sosial.id_perhutanan_sosial')
         ->where('verifikasi_dklh','=',0)
@@ -79,6 +86,21 @@ class c_dashboard extends Controller
         $data['foto_ps'] = tb_foto_perhutanan_sosial::all()->random($jumlah_ps);
         $data['panduan'] = tb_panduan::orderby('tingkat','ASC')->get();
         $data['regulasi'] = tb_regulasi::orderby('tingkat','ASC')->get();
+        $data['pengunjung'] = tb_pengunjung::count();
+
         return view('landing/utama',$data);
+    }
+
+    public function getVisIpAddr() {
+      
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        }
+        else if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        else {
+            return $_SERVER['REMOTE_ADDR'];
+        }
     }
 }

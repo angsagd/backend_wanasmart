@@ -183,6 +183,9 @@
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
+
+      
+
       <div class="container">
 
         <div class="row" data-aos="fade-up">
@@ -218,8 +221,19 @@
               <p>Rehabilitasi Hutan dan Lahan</p>
             </div>
           </div>
-
         </div>
+
+        <div class="container mt-5">
+        <div class="row mb-2" data-aos="fade-up">
+          <div class="col">
+            <div class="count-box">
+              <i class="bi bi-person"></i>
+              <span data-purecounter-start="0" data-purecounter-end="{{$pengunjung}}" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Pengunjung</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       </div>
     </section><!-- End Counts Section -->
