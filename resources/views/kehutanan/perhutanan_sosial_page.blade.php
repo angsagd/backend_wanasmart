@@ -66,11 +66,11 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label>Latitude : *</label>
-                                        <input type="text" name="lat" class="form-control" id="lat" readonly="" required="">
+                                        <input type="text" name="lat" class="form-control" id="lat" required="">
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Longitude : *</label>
-                                        <input type="text" name="lng" class="form-control" id="lng" readonly="" required="">
+                                        <input type="text" name="lng" class="form-control" id="lng" required="">
                                     </div>
 
                                 </div>
