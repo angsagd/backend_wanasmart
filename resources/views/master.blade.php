@@ -87,7 +87,7 @@
   	
 	 
 	
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlheJv_wH9ofNwqRvlgnwEaOWHMUCIY9s"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvxWP7CW5hK9fcdLRYCRUz2vKWWWJC8Go"></script>
 
 	<!-- jQuery 3 -->
 	<script src="{{asset('assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js')}}"></script>
