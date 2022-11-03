@@ -33,12 +33,14 @@
                                 <label>Kecamatan</label>
                                 <input type="hidden" name="nama_kec" id="nama_kec">
                                 <select class="form-control select2" id="kode_kec" name="kode_kec" onchange="pilihkec()" disabled="" required="">
+                                    <option selected disabled>Pilih Kabupaten terlebih dahulu</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Kelurahan / Desa</label>
                                 <input type="hidden" name="nama_kel" id="nama_kel">
                                 <select class="form-control select2" id="kode_kel" name="kode_kel" disabled="" required="" onchange="pilihkel()">
+                                    <option selected disabled>Pilih Kecamatan terlebih dahulu</option>
                                 </select>
                             </div>
 
@@ -239,6 +241,8 @@
     var url = "https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=51";
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+
+
             var myArr = JSON.parse(this.responseText);
             for (var i = 0; i < myArr.kota_kabupaten.length; i++) {
                 var opt = document.createElement('option');
@@ -267,6 +271,12 @@
         var url = "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=" + kab;
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                var opt = document.createElement('option');
+                opt.value = '0';
+                opt.innerHTML = 'Silahkan Pilih Kecamatan';
+                opt.disabled = true;
+                kec.appendChild(opt);
+
                 var myArr = JSON.parse(this.responseText);
                 for (var i = 0; i < myArr.kecamatan.length; i++) {
                     var opt = document.createElement('option');
@@ -296,6 +306,12 @@
         var url = "https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=" + kec;
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                var opt = document.createElement('option');
+                opt.value = '0';
+                opt.innerHTML = 'Silahkan Pilih Kelurahan/Desa';
+                opt.disabled = true;
+                kel.appendChild(opt);
+
                 var myArr = JSON.parse(this.responseText);
                 for (var i = 0; i < myArr.kelurahan.length; i++) {
                     var opt = document.createElement('option');
