@@ -81,9 +81,19 @@ class c_dashboard extends Controller
         $data['jumlah_ps'] = $jumlah_terverifikasi_ps;
         $data['jumlah_rhl'] = $jumlah_terverifikasi_rhl;
         $jumlah_rhl = tb_foto_rhl::all()->count();
-        $data['foto_rhl'] = tb_foto_rhl::all()->random($jumlah_rhl);
+        if ($jumlah_rhl > 20) {
+            $fotorhl = 20;
+        } else {
+            $fotorhl = $jumlah_rhl;
+        }
+        $data['foto_rhl'] = tb_foto_rhl::all()->random($fotorhl);
         $jumlah_ps = tb_foto_perhutanan_sosial::all()->count();
-        $data['foto_ps'] = tb_foto_perhutanan_sosial::all()->random($jumlah_ps);
+        if ($jumlah_ps > 20) {
+            $fotops = 20;
+        } else {
+            $fotops = $jumlah_ps;
+        }
+        $data['foto_ps'] = tb_foto_perhutanan_sosial::all()->random($fotops);
         $data['panduan'] = tb_panduan::orderby('tingkat','ASC')->get();
         $data['regulasi'] = tb_regulasi::orderby('tingkat','ASC')->get();
         $data['pengunjung'] = tb_pengunjung::count();
