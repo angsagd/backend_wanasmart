@@ -65,11 +65,11 @@
 		                	<div class="row">
 		                		<div class="col-sm-6">
 		                			<label>Latitude : *</label>
-		                			<input type="text" name="lat" class="form-control" id="lat" readonly="" required="" value="{{$rhl->lat}}">
+		                			<input type="text" name="lat" class="form-control" id="lat" required="" value="{{$rhl->lat}}">
 		                		</div>	
 		                		<div class="col-sm-6">
 		                			<label>Longitude : *</label>
-		                			<input type="text" name="lng" class="form-control" id="lng" readonly="" required="" value="{{$rhl->lng}}">
+		                			<input type="text" name="lng" class="form-control" id="lng" required="" value="{{$rhl->lng}}">
 		                		</div>
 		           
 		                	</div>	
