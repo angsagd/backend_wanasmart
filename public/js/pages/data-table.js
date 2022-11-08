@@ -23,7 +23,7 @@ $(function () {
 			'copy', 'csv', 'excel', 'pdf', 'print'
 		]
 	} );
-
+ 
 	$('#examplehu').DataTable( {
 		dom: 'Bfrtip',
 		buttons: [
