@@ -23,6 +23,13 @@ $(function () {
 			'copy', 'csv', 'excel', 'pdf', 'print'
 		]
 	} );
+
+	$('#examplehu').DataTable( {
+		dom: 'Bfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	} );
 	
 	$('#tickets').DataTable({
 	  'paging'      : true,

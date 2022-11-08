@@ -7,7 +7,7 @@
 			<div class="card-header bg-primary">Data Perhutanan Sosial</div>
 			<div class="card-body">
 				<div class="table-responsive">
-					<table class="table table-striped" id="example1">
+					<table class="table table-striped" id="example">
 						<thead class="text-center">
 							<th>No</th>
 							<th>Nama Kelompok</th>
@@ -54,7 +54,7 @@
 			<div class="card-header bg-primary">Data Rehabilitasi Hutan Lahan</div>
 			<div class="card-body">
 				<div class="table-responsive">
-					<table class="table table-striped" id="example2">
+					<table class="table table-striped" id="examplehu">
 						<thead class="text-center">
 							<th>No</th>
 							<th>Nama Kelompok</th>

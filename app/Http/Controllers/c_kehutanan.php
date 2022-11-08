@@ -144,10 +144,12 @@ class c_kehutanan extends Controller
             join('tb_verifikasi_persos','tb_verifikasi_persos.perhutanan_sosial_id','=','tb_perhutanan_sosial.id_perhutanan_sosial')
             ->leftjoin('tb_ps_kphs','tb_ps_kphs.ps_id','=','tb_perhutanan_sosial.id_perhutanan_sosial')
             ->where('pemilahan_admin','=','0')
+            ->orderby('tb_perhutanan_sosial.kabupaten')
             ->get();
 
         $data['rhl'] = tb_rhl::join('tb_status_rhls','tb_status_rhls.rhl_id','=','tb_rhls.id_rhl')
                     ->where('pemilahan_admin','=',0)
+                    ->orderby('tb_rhls.kabupaten')
                     ->get();
         return view('kehutanan/admin/pemilahan_data',$data);
     }
