@@ -23,7 +23,7 @@ class c_kehutanan extends Controller
         $data['perhutanan_sosial'] = 
                 tb_perhutanan_sosial::
                     join('tb_verifikasi_persos','tb_verifikasi_persos.perhutanan_sosial_id','=','tb_perhutanan_sosial.id_perhutanan_sosial')
-                    ->where('user_id','=',Session::get('id'))->get();
+                    ->where('tb_perhutanan_sosial.user_id','=',Session::get('id'))->get();
         return view('kehutanan/list_perhutanan_sosial',$data);
     }
 
@@ -114,6 +114,18 @@ class c_kehutanan extends Controller
         $data['perhutanan_sosial'] = tb_perhutanan_sosial::find($id);
         $data['hhbk'] = tb_potensi_hhbk::where('perhutanan_sosial_id','=',$id)->get();
         return view('kehutanan/potensi_hhbk',$data);
+    }
+
+    function hapus_ps($id){
+        $data = tb_perhutanan_sosial::find($id);
+        if ($data->delete()) {
+            Session::flash('status','sukses');
+            Session::flash('pesan','Data Perhutanan Sosial berhasil dihapus');
+        } else {
+            Session::flash('status','gagal');
+            Session::flash('pesan','Data Perhutanan Sosial gagal dihapus');
+        }
+        return back();
     }
 
     function simpan_hhbk(Request $request){

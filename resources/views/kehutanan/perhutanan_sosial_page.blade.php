@@ -274,7 +274,6 @@
                 var opt = document.createElement('option');
                 opt.value = '0';
                 opt.innerHTML = 'Silahkan Pilih Kecamatan';
-                opt.disabled = true;
                 kec.appendChild(opt);
 
                 var myArr = JSON.parse(this.responseText);
@@ -309,7 +308,6 @@
                 var opt = document.createElement('option');
                 opt.value = '0';
                 opt.innerHTML = 'Silahkan Pilih Kelurahan/Desa';
-                opt.disabled = true;
                 kel.appendChild(opt);
 
                 var myArr = JSON.parse(this.responseText);

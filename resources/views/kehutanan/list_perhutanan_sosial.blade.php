@@ -60,8 +60,8 @@
 								<span class="badge badge-danger"><i class="fa fa-close mr-2"></i>Verifikasi DKLH</span>
 								@endif
 								<br>
-								
 							</td>
+
 							<td class="text-center">
 								<a target="_blank" href="{{url('edit_perhutanan_sosial')}}/{{$ps->id_perhutanan_sosial}}">
 									<button title="Edit Data" class="btn btn-xs btn-block btn-warning"><i class="fa fa-edit mr-2"></i>Perbarui</button>
@@ -75,7 +75,11 @@
 								<a target="_blank" href="{{url('history_catatan')}}/{{$ps->id_perhutanan_sosial}}">
 									<button title="Potensi HHBK" class="btn btn-xs btn-block btn-danger"><i class="fa fa-envelope mr-2"></i>History Catatan</button>
 								</a>
+								<a target="_blank" href="{{url('hapus_ps')}}/{{$ps->id_perhutanan_sosial}}" onclick="return confirm('yakin menghapus data {{$ps->nama_kelompok}} ?')">
+									<button title="Hapus PS" class="btn btn-xs btn-block btn-warning"><i class="fa fa-trash mr-2"></i>Hapus</button>
+								</a>
 							</td>
+							
 						</tr>
 						@endforeach
 					</tbody>

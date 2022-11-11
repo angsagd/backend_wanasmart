@@ -58,11 +58,11 @@
 				<div class="mt-4">
 					<b class="mb-2">KETERANGAN :</b>
 					<div>
-						<img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png">
+						<img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png">
 						Perhutanan Sosial
 					</div>
 					<div>
-						<img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png">
+						<img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png">
 						Rehabilitasi Hutan dan Lahan
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 			var marker = new google.maps.Marker({
 			    position: lokasi,
 			    map:peta,
-			    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+			    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
 			    title:"{{$l->nama_kelompok}}"
 			});
 		<?php } ?>
@@ -98,7 +98,7 @@
 			var marker = new google.maps.Marker({
 			    position: lokasi,
 			    map:peta,
-			    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+			    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
 			    title:"{{$l->nama_kelompok}}"
 			});
 		<?php } ?>

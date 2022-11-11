@@ -89,6 +89,7 @@ Route::group(['middleware' => ['autentikasi']], function(){
     Route::get('hapus_foto_ps/{id}', [c_kehutanan::class, 'hapus_foto_ps']);
     Route::post('foto_perhutanan_sosial_simpan', [c_kehutanan::class, 'simpan_foto']);
     Route::get('potensi_hhbk/{id}', [c_kehutanan::class, 'potensi_hhbk']);
+    Route::get('hapus_ps/{id}', [c_kehutanan::class, 'hapus_ps']);
     Route::post('simpan_hhbk', [c_kehutanan::class, 'simpan_hhbk']);
     Route::get('hapus_potensi_hhbk/{id}', [c_kehutanan::class, 'hapus_potensi_hhbk']);
     Route::get('edit_perhutanan_sosial/{id}', [c_kehutanan::class, 'edit_perhutanan_sosial']);
