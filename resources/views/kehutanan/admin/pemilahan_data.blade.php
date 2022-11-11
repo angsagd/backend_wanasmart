@@ -38,6 +38,9 @@
 									<a href="{{url('verifikasi_admin')}}/{{$p->id_perhutanan_sosial}}">
 										<button class="btn btn-xs btn-block btn-primary"><i class="fa fa-check mr-2"></i>Proses Verifikasi</button>
 									</a>
+									<a href="{{url('hapus_ps')}}/{{$p->id_perhutanan_sosial}}" onclick="return confirm('yakin menghapus data {{$p->nama_kelompok}} ?')">
+										<button class="btn btn-xs btn-block btn-danger"><i class="fa fa-trash mr-2"></i>Hapus</button>
+									</a>
 									
 								</td>
 							</tr>
