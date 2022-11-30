@@ -87,7 +87,7 @@
 			    position: lokasi,
 			    map:peta,
 			    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-			    title:"{{$l->nama_kelompok}} \nLuas : {{$l->luas}} \n Jasa Lingkungan : {{$l->jasa_lingkungan}}"
+			    title:"{{$l->nama_kelompok}} \nLuas : {{$l->luas}}"
 			});
 		<?php } ?>
 
