@@ -87,7 +87,7 @@
 			    position: lokasi,
 			    map:peta,
 			    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-			    title:"{{$l->nama_kelompok}}"
+			    title:"{{$l->nama_kelompok}}\nLuas : {{$l->luas}} Ha \nJasa Lingkungan : {{$l->jasa_lingkungan}}"
 			});
 		<?php } ?>
 
@@ -99,7 +99,7 @@
 			    position: lokasi,
 			    map:peta,
 			    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
-			    title:"{{$l->nama_kelompok}}"
+			    title:"{{$l->nama_kelompok}}\nLuas : {{$l->luas}} Ha \nJasa Lingkungan : {{$l->jasa_lingkungan}}"
 			});
 		<?php } ?>
 	}
