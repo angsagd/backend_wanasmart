@@ -87,7 +87,7 @@
 			    position: lokasi,
 			    map:peta,
 			    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-			    title:"{{$l->nama_kelompok}}"
+			    title:"{{$l->nama_kelompok}} {{$l->luas}}"
 			});
 		<?php } ?>
 
