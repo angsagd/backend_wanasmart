@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>WANA SMART</title>
+  <title>WanaHub :: Sistem Manajemen Data Kehutanan Terintegrasi</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta name="google-signin-client_id" content="438813564258-cdl5dne36849c6ng0cle0qe4kk0a2ad8.apps.googleusercontent.com">
@@ -44,7 +44,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="#"><span>WANA SMART</span></a></h1>
+        <h1><a href="#"><span>WanaHub</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>

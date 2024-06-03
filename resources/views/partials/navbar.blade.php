@@ -2,8 +2,10 @@
     <!-- Logo -->
     <a href="{{url('dashboard')}}" class="logo">
 	  <div class="logo-mini">
-		  <span class="light-logo"><img src="{{asset('foto/logowanasmar.png')}}" alt="logo"></span>
-		  <span class="dark-logo"><img src="{{asset('foto/logowanasmar.png')}}" alt="logo"></span>
+		  {{-- <span class="light-logo"><img src="{{asset('foto/logowanasmar.png')}}" alt="logo"></span>
+		  <span class="dark-logo"><img src="{{asset('foto/logowanasmar.png')}}" alt="logo"></span> --}}
+		  <span class="light-logo">WanaHub</span>
+		  <span class="dark-logo">WanaHub</span>
 	  </div>
     </a>
 
@@ -14,14 +16,14 @@
 		  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
 			<i class="ti-align-left"></i>
 		  </a>
-		  
 
-		
+
+
 	  </div>
-		
+
       <div class="navbar-custom-menu r-side">
         <ul class="nav navbar-nav">
-		  
+
 		  <!-- User Account-->
       <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -30,8 +32,8 @@
         <ul class="dropdown-menu animated flipInX">
           <!-- User image -->
           <li class="user-header bg-img" style="background-image: url(../images/user-info.jpg)" data-overlay="3">
-		  <div class="flexbox align-self-center">					  
-		  	<img src="{{Session::get('photo')}}" class="float-left rounded-circle" alt="User Image">					  
+		  <div class="flexbox align-self-center">
+		  	<img src="{{Session::get('photo')}}" class="float-left rounded-circle" alt="User Image">
 			<h4 class="user-name align-self-center">
 			  <span>{{Session::get('nama')}}</span>
 			  <small>{{Session::get('email')}}</small>
@@ -47,14 +49,14 @@
 				<div class="p-10"><a href="javascript:void(0)" class="btn btn-sm btn-rounded btn-success">View Profile</a></div>
           </li>
         </ul>
-      </li>	
-			
-		  
+      </li>
+
+
           <!-- Control Sidebar Toggle Button -->
           <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-cog fa-spin"></i></a>
           </li>
-			
+
         </ul>
       </div>
     </nav>
@@ -72,7 +74,7 @@
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			  <span aria-hidden="true">×</span></button>
 		  </div>
-		  
+
 		  <div class="modal-body">
 					{{csrf_field()}}
 					<div class="form-group">
@@ -91,14 +93,14 @@
 					<hr>
 					<label>Atur ke :</label>
 					<select id="role_user" name="role" class="select form-control">
-								
+
 					</select>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			<button type="submit" class="btn btn-primary float-right">Simpan</button>
 		  </div>
-		  
+
 		</div>
 		<!-- /.modal-content -->
 	  </div>

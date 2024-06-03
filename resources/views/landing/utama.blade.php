@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>WANA SMART</title>
+  <title>WanaHub :: Sistem Manajemen Data Kehutanan Terintegrasi</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta name="google-signin-client_id" content="438813564258-cdl5dne36849c6ng0cle0qe4kk0a2ad8.apps.googleusercontent.com">
@@ -44,7 +44,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>WANA SMART</span></a></h1>
+        <h1><a href="index.html"><span>WanaHub</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -61,7 +61,7 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>Sistem Tata Kelola Terintegrasi <span>WANA SMART</span></h1>
+            <h1>Sistem Tata Kelola Terintegrasi <span>WanaHub</span></h1>
             <h2>Dinas Kehutanan dan Lingkungan Hidup Provinsi Bali</h2>
             <div class="text-center text-lg-start">
               <a href="#about" class="btn-get-started scrollto">Ketahui Lebih Jauh</a>
@@ -184,7 +184,7 @@
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
 
-      
+
 
       <div class="container">
 
@@ -311,7 +311,7 @@
             @else
             <li data-aos="fade-up">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Data regulasi kosong<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              
+
             </li>
             @endif
 
@@ -329,7 +329,7 @@
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
-              
+
             </div>
 
 
@@ -340,8 +340,8 @@
       </div>
     </section><!-- End Testimonials Section -->
 
-    
-    
+
+
 
     <!-- PANDUAN -->
     <!-- ======= PANDUAN Section ======= -->
@@ -372,7 +372,7 @@
             @else
             <li data-aos="fade-up">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Data panduan kosong<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              
+
             </li>
             @endif
 
@@ -382,7 +382,7 @@
       </div>
     </section><!-- End F.A.Q Section -->
 
-    
+
   </main><!-- End #main -->
 
   @include('landing.footer')

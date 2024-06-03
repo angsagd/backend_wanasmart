@@ -7,31 +7,31 @@
     <meta name="google-signin-client_id" content="438813564258-cdl5dne36849c6ng0cle0qe4kk0a2ad8.apps.googleusercontent.com">
     <link rel="icon" href="../images/favicon.ico">
 
-    <title>Wana Smart - Dashboard</title>
+    <title>WanaHub - Dashboard</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
 	<!-- Bootstrap 4.0-->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap/dist/css/bootstrap.css')}}">
-	
+
     <!-- c3 CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor_components/c3/c3.min.css')}}">
-	
+
 	<!-- weather weather -->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/weather-icons/weather-icons.css')}}">
-	
-	<!-- daterange picker -->	
+
+	<!-- daterange picker -->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-daterangepicker/daterangepicker.css')}}">
-	
+
 	<!-- Morris charts -->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/morris.js/morris.css')}}">
-	
+
 	<!-- Bootstrap extend-->
 	<link rel="stylesheet" href="{{asset('css/bootstrap-extend.css')}}">
-	
+
 	<!-- theme style -->
 	<link rel="stylesheet" href="{{asset('css/master_style.css')}}">
-	
+
 	<!-- UltimatePro Admin skins -->
 	<link rel="stylesheet" href="{{asset('css/skins/_all-skins.css')}}">
 
@@ -42,7 +42,7 @@
 
 	<!-- Select2 -->
 	<link rel="stylesheet" href="{{asset('assets/vendor_components/select2/dist/css/select2.min.css')}}">
-	
+
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 
 	 <!-- Popup CSS -->

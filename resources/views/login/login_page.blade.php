@@ -4,13 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Wana Smart | Login</title>
+	<title>WanaHub | Login</title>
 	<meta name="google-signin-client_id" content="438813564258-cdl5dne36849c6ng0cle0qe4kk0a2ad8.apps.googleusercontent.com">
    <!--Made with love by Mutiullah Samim -->
-   
+
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -27,7 +27,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>WanaSmart Login</h3>
+				<h3>WanaHub Login</h3>
 			</div>
 			<div class="card-body">
 				<form action="{{url('ceklogin')}}" method="post">
@@ -37,7 +37,7 @@
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
 						<input name="email" type="text" class="form-control" placeholder="email">
-						
+
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
@@ -78,8 +78,10 @@
 	@import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('https://images.unsplash.com/photo-1604640091195-46bb876c4f22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80');
-background-size: cover;
+
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d9/The_Little_Forrest_%28158239547%29.jpeg');
+    /* background-image: url('https://images.unsplash.com/photo-1604640091195-46bb876c4f22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80'); */
+    background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
